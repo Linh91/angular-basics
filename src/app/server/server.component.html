@@ -1,1 +1,15 @@
 <p>{{ 'Server' }} Server ID: {{ serverId }}. Server status: {{ getServerStatus() }}</p>
+<hr>
+<p>Username: {{ username }}</p>
+<input type="text"
+        [(ngModel)]="username">
+<br>
+<p>Age: {{ userAge }}</p>
+<input type="text"
+        (input)="inputAge($event)">
+<br>
+<button class="btn btn-primary" 
+        [disabled]="username === ''"
+        (click)="username =''">Reset username</button>
+<p>{{ resetButton }}</p>
+<br>
