@@ -10,6 +10,7 @@
 <br>
 <button class="btn btn-primary" 
         [disabled]="username === ''"
-        (click)="username =''">Reset username</button>
+        (click)="clearName()">Reset username</button>
+<p *ngIf="nameIsPresent">Username is: {{ username }}</p>
 <p>{{ resetButton }}</p>
 <br>
