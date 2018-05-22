@@ -15,3 +15,10 @@
 <!-- <p [innerText]="allowNe wServer"></p> -->
 <!-- <button>{{ serverCreationStatus }}</button> -->
 <app-server *ngFor="let server of servers"></app-server>
+<hr>
+<hr>
+<button class="btn btn-primary"
+        [disabled]="noPassword"
+        (click)="displayDetail()">Display Details</button>
+<p *ngIf="noPassword === true">Secret password - 'tuna'</p>
+<p *ngFor="let time of timestamp">{{ timestamp }}</p>
