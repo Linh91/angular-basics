@@ -1,4 +1,5 @@
-<p>{{ 'Server' }} Server ID: {{ serverId }}. Server status: {{ getServerStatus() }}</p>
+<p [ngStyle]="{backgroundColor: getColor()}"
+    [ngClass]="{online: serverStatus === 'online'}">{{ 'Server' }} Server ID: {{ serverId }}. Server status: {{ getServerStatus() }}</p>
 <hr>
 <p>Username: {{ username }}</p>
 <input type="text"
@@ -11,6 +12,7 @@
 <button class="btn btn-primary" 
         [disabled]="username === ''"
         (click)="clearName()">Reset username</button>
+<p *ngIf="nameIsPresent">Username is: {{ username }}</p>
 <p *ngIf="nameIsPresent">Username is: {{ username }}</p>
 <p>{{ resetButton }}</p>
 <br>
